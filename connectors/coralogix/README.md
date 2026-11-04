@@ -1,6 +1,6 @@
 # Set up Coralogix
 
-Before you connect, choose your Coralogix region and either OAuth sign-in or a personal API key. If you want Coralogix alerts to open investigations, also do step 3 after you connect.
+Before you connect, choose your Coralogix region and either OAuth sign-in with Dynamic Client Registration or a personal API key. If you want Coralogix alerts to open investigations, also do step 3 after you connect.
 
 ## 1. Find your region
 
@@ -21,7 +21,8 @@ Select the label matching your Coralogix domain when you connect. A key works on
 
 ### OAuth sign-in
 
-Select **OAuth** in the DevOps Agent connection form, then sign in to Coralogix for the region you selected and approve the requested access. DevOps Agent completes the OAuth flow; you do not need to create or paste an OAuth client secret.
+Coralogix supports OAuth 2.1 Dynamic Client Registration (DCR) in every region in the table above. When you sign in, DevOps Agent registers its own OAuth client with your region's Coralogix authorization server, so there is no OAuth app, client ID or client secret to create in Coralogix.
+Select **OAuth** in the DevOps Agent connection form, then sign in to Coralogix for the region you selected and approve the requested access.
 
 The Coralogix user who signs in needs access to the applications and subsystems the agent should investigate. Use a least-privilege, read-only role such as **DataQuerying**. Do not use a shared administrator account.
 
